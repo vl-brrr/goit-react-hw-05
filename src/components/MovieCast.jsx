@@ -55,7 +55,7 @@ export default function MovieCast() {
             return (
               <li key={id} className={css.card}>
                 <img
-                  src={profile_path ? `https://image.tmdb.org/t/p/w185/${profile_path}` : poster}
+                  src={profile_path ? `https://image.tmdb.org/t/p/w185${profile_path}` : poster}
                   alt={name}
                 />
                 <div className={css.textWrapper}>

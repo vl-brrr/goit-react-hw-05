@@ -10,7 +10,7 @@ export default function MovieList({ movies, location }) {
           <li key={id} className={css.item}>
             <Link to={`/movies/${id}`} state={location} className={css.link}>
               <img
-                src={poster_path ? `https://image.tmdb.org/t/p/w185/${poster_path}` : poster}
+                src={poster_path ? `https://image.tmdb.org/t/p/w185${poster_path}` : poster}
                 alt={title}
               />
               <span className={css.movieTitle}>{title}</span>

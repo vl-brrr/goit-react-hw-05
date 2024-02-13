@@ -50,7 +50,7 @@ export default function MovieDetailsPage() {
             <img
               className={css.poster}
               src={
-                movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : poster
+                movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : poster
               }
               alt={movie.title}
             />

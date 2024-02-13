@@ -1,0 +1,24 @@
+.btn {
+  display: inline-flex;
+  padding: 8px 24px;
+  align-items: center;
+  justify-content: center;
+  max-width: 165px;
+  color: white;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  border-radius: 4px;
+  background: #bf9039;
+  border: none;
+  cursor: pointer;
+  /* transition: background-color var(--animation); */
+}
+
+.container {
+  max-width: 1185px;
+  padding: 0 15px;
+  margin: 0 auto 16px;
+  display: flex;
+  justify-content: center;
+}

@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Navbar from './NavBar';
-import Loader from './Loader';
+import { Loader } from './Loader';
 
 function App() {
   const Home = lazy(() => import('../pages/HomePage'));

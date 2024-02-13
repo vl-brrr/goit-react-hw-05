@@ -1,0 +1,16 @@
+.card {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 15px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.card:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.author {
+  font-weight: 700;
+  color: #bf9039;
+  font-size: 20px;
+  margin-bottom: 8px;
+}

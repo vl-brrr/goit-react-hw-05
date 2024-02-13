@@ -12,9 +12,12 @@
   background: #bf9039;
   border: none;
   cursor: pointer;
-  /* transition: background-color var(--animation); */
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.btn:hover {
+  background-color: #957945;
+}
 .container {
   max-width: 1185px;
   padding: 0 15px;

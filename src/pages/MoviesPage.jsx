@@ -5,6 +5,9 @@ import { Toaster } from 'react-hot-toast';
 import MovieList from '../components/MovieList';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import Container from '../components/Container';
+import { LoadMoreBtn } from '../components/LoadMoreBtn';
+import ErrorMessage from '../components/ErrorMessage';
+
 export default function MoviesPage() {
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
@@ -14,6 +17,10 @@ export default function MoviesPage() {
 
   const [params, setParams] = useSearchParams();
   const queryParams = params.get('query') ?? '';
+
+  const handleLoadMore = () => {
+    setPage(page + 1);
+  };
 
   const searchMovies = async newQuery => {
     setQuery(`${Date.now()}/${newQuery}`);
@@ -58,6 +65,8 @@ export default function MoviesPage() {
     <Container>
       <SearchBar onSubmit={searchMovies} />
       {movies.length > 0 && <MovieList movies={movies} location={location} />}
+      {movies.length > 0 && !lastPage && <LoadMoreBtn loadMore={handleLoadMore} />}
+      {error && <ErrorMessage />}
       <Toaster
         position="top-right"
         containerStyle={{

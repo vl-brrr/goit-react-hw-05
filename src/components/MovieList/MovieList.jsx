@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import poster from '../assets/no_poster.jpg';
+import poster from '../../assets/no_poster.jpg';
 import css from './MovieList.module.css';
 
 export default function MovieList({ movies, location }) {

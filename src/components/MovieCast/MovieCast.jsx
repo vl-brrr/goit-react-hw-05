@@ -2,7 +2,7 @@ import { forUseEffect } from '../../fetch';
 import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
-import poster from '../../assets/no_poster.jpg  ';
+import poster from '../../assets/no_poster.jpg';
 import css from './MovieCast.module.css';
 
 export default function MovieCast() {

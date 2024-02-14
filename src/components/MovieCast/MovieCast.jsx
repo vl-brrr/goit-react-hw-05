@@ -1,11 +1,12 @@
-import { forUseEffect } from '../fetch';
+import { forUseEffect } from '../../fetch';
 import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import ErrorMessage from './ErrorMessage';
-import css from './MovieReviews.module.css';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import poster from '../assets/no_poster.jpg';
+import css from './MovieCast.module.css';
 
-export default function MovieReviews() {
-  const [movieReviews, setMovieReviews] = useState([]);
+export default function MovieCast() {
+  const [movieCast, setMovieCast] = useState(null);
   const [error, setError] = useState(false);
 
   const { movieId } = useParams();
@@ -18,16 +19,15 @@ export default function MovieReviews() {
     async function fetch() {
       const settings = {
         error: setError,
-        set: setMovieReviews,
-        data: 'results',
+        set: setMovieCast,
+        data: 'cast',
         id: movieId,
-        path: '/reviews',
+        path: '/credits',
         controller: controller,
       };
       await forUseEffect(settings);
     }
     fetch();
-
     return () => {
       controller.abort();
     };
@@ -49,19 +49,23 @@ export default function MovieReviews() {
   return (
     <div ref={linkRef} style={{ marginBottom: '15px' }}>
       {error && <ErrorMessage />}
-      {movieReviews.length > 0 ? (
-        <ul>
-          {movieReviews.map(({ author, id, content }) => {
+      {movieCast && (
+        <ul className={css.list}>
+          {movieCast.map(({ profile_path, id, name, character }) => {
             return (
               <li key={id} className={css.card}>
-                <p className={css.author}>{author}</p>
-                <p>{content}</p>
+                <img
+                  src={profile_path ? `https://image.tmdb.org/t/p/w185${profile_path}` : poster}
+                  alt={name}
+                />
+                <div className={css.textWrapper}>
+                  <span className={css.actor}>{name}</span>
+                  <p className={css.character}>{character}</p>
+                </div>
               </li>
             );
           })}
         </ul>
-      ) : (
-        <span>No one has left a review for this movie yet.</span>
       )}
     </div>
   );

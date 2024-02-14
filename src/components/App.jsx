@@ -1,15 +1,15 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import Navbar from './NavBar';
-import { Loader } from './Loader';
+import Navbar from './Navbar/NavBar';
+import { Loader } from './Loader/Loader';
 
 function App() {
   const Home = lazy(() => import('../pages/HomePage'));
   const Movies = lazy(() => import('../pages/MoviesPage'));
-  const MovieDetails = lazy(() => import('../pages/MovieDetailsPage'));
-  const MovieCast = lazy(() => import('../components/MovieCast'));
-  const MovieReviews = lazy(() => import('../components/MovieReviews'));
+  const MovieDetails = lazy(() => import('../pages/MovieDetailsPage/MovieDetailsPage'));
+  const MovieCast = lazy(() => import('./MovieCast/MovieCast'));
+  const MovieReviews = lazy(() => import('./MovieReviews/MovieReviews'));
 
   return (
     <>

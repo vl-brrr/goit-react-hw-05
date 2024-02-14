@@ -1,4 +1,4 @@
-import css from './/LoadMoreBtn.module.css';
+import css from './LoadMoreBtn.module.css';
 
 export const LoadMoreBtn = ({ loadMore }) => {
   return (

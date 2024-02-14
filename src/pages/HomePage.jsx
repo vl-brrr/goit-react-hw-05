@@ -1,11 +1,11 @@
 import { getTrendingMovies } from '../api';
 import { useState, useEffect } from 'react';
-import Container from '../components/Container';
-import PageTitle from '../components/PageTitle';
-import ErrorMessage from '../components/ErrorMessage';
+import Container from '../components/Container/Container';
+import PageTitle from '../components/PageTitle/PageTitle';
+import ErrorMessage from '../components/ErrorMessage/ErrorMessage';
 import { useLocation } from 'react-router-dom';
-import MovieList from '../components/MovieList';
-import { LoadMoreBtn } from '../components/LoadMoreBtn';
+import MovieList from '../components/MovieList/MovieList';
+import { LoadMoreBtn } from '../components/LoadMoreBtn/LoadMoreBtn';
 
 export default function HomePage() {
   const [page, setPage] = useState(1);

@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import SearchBar from '../components/SearchBar';
+import SearchBar from '../components/SearchBar/SearchBar';
 import { getMoviesByName } from '../api';
 import { Toaster } from 'react-hot-toast';
-import MovieList from '../components/MovieList';
+import MovieList from '../components/MovieList/MovieList';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import Container from '../components/Container';
-import { LoadMoreBtn } from '../components/LoadMoreBtn';
-import ErrorMessage from '../components/ErrorMessage';
+import Container from '../components/Container/Container';
+import { LoadMoreBtn } from '../components/LoadMoreBtn/LoadMoreBtn';
+import ErrorMessage from '../components/ErrorMessage/ErrorMessage';
 
 export default function MoviesPage() {
   const [query, setQuery] = useState('');

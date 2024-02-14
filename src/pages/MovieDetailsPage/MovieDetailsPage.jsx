@@ -1,9 +1,9 @@
 import { Suspense, useEffect, useRef, useState } from 'react';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
-import { forUseEffect } from '../fetch';
-import { Loader } from '../components/Loader';
-import Container from '../components/Container';
-import ErrorMessage from '../components/ErrorMessage';
+import { forUseEffect } from '../../fetch';
+import { Loader } from '../../components/Loader/Loader';
+import Container from '../../components/Container/Container';
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import poster from '../assets/no_poster_500.jpg';
 import css from './MovieDetailsPage.module.css';
 import { FaArrowLeft } from 'react-icons/fa6';

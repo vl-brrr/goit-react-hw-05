@@ -2,7 +2,7 @@ import toast from 'react-hot-toast';
 import { IoIosSearch } from 'react-icons/io';
 import css from './SearchBar.module.css';
 
-export default function SearchBar({ value, onSubmit }) {
+export default function SearchBar({ onSubmit }) {
   const handleSubmit = event => {
     event.preventDefault();
 
